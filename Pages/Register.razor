@@ -1,0 +1,29 @@
+@page "/register"
+
+<h2>Event Registration</h2>
+
+<input placeholder="Name" @bind="Name" />
+<br />
+<input placeholder="Email" @bind="Email" />
+<br />
+<button @onclick="Register">Register</button>
+
+<p>@Message</p>
+
+@code {
+    string Name;
+    string Email;
+    string Message;
+
+    void Register()
+    {
+        if (string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(Email))
+        {
+            Message = "Please fill in all fields.";
+        }
+        else
+        {
+            Message = "Registration successful.";
+        }
+    }
+}

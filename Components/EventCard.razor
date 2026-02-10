@@ -1,0 +1,17 @@
+@using EventEase.Models
+
+<div class="event-card">
+    <h3>@Event.Title</h3>
+    <p>@Event.Location</p>
+    <p>@Event.Date.ToShortDateString()</p>
+
+    <label>
+        Registered:
+        <input type="checkbox" @bind="Event.IsRegistered" />
+    </label>
+</div>
+
+@code {
+    [Parameter]
+    public EventModel Event { get; set; }
+}
